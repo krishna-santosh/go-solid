@@ -9,7 +9,7 @@ The end result of this template is a single executable binary. This binary serve
 ## Stack
 
 #### Backend:
-- [gofiber](https://gofiber.dev) (API & File Server)
+- [gofiber](https://gofiber.io) (API & File Server)
 
 #### Frontend:
 - [Solid.js](https://solidjs.com) (with [@solidjs/router](https://docs.solidjs.com/guides/how-to-guides/routing-in-solid/solid-router))
