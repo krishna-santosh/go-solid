@@ -1,8 +1,8 @@
-import { A } from "@solidjs/router";
+import { A } from '@solidjs/router'
 
 export default function Navbar() {
   return (
-    <div class="btm-nav lg:w-[40%] mx-auto">
+    <div class="btm-nav mx-auto lg:w-[40%]">
       <A end={true} href="/" class="bg-base-200">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,5 +36,5 @@ export default function Navbar() {
         </svg>
       </A>
     </div>
-  );
+  )
 }
