@@ -22,7 +22,7 @@ The end result of this template is a single executable binary. This binary serve
 ## TODO
 
 - [ ] Make frontend PWA
-- [ ] Add Prettier
+- [X] ~Add Prettier~
 - [ ] Create an API and call it from the frontend
 - [ ] Add Usage Instructions
 
