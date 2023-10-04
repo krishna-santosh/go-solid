@@ -34,7 +34,7 @@ func CreateNote(c *fiber.Ctx) error {
 
 	log.Printf("Created Note {%d} Successfully.\n", note.ID)
 
-	return c.Status(201).JSON(fiber.Map{"status": "success", "message": "Created todo", "data": note})
+	return c.Status(201).JSON(fiber.Map{"status": "success", "message": "Created note successfully", "data": note})
 }
 
 func GetNote(c *fiber.Ctx) error {
