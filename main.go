@@ -1,23 +1,31 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/filesystem"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/gofiber/fiber/v2/middleware/recover"
 
-	"go-solid/ui"
+	"go-solid/database"
+	"go-solid/router"
 )
+
+func init() {
+	database.ConnectDB()
+}
 
 func main() {
 	app := fiber.New()
-	app.Use(logger.New())
 
-	app.Use("/", filesystem.New(filesystem.Config{
-		Root:       http.FS(ui.UI),
-		PathPrefix: "dist",
-	}))
+	app.Use(logger.New())
+	app.Use(recover.New())
+
+	// Use Explicit CORS policies in Production ⚠️.
+	// Read More: https://docs.gofiber.io/api/middleware/cors/
+	app.Use(cors.New(cors.Config{}))
+
+	router.SetupRoutes(app)
+	router.ServeUI(app)
 
 	app.Listen(":9000")
 }

@@ -10,6 +10,7 @@ The end result of this template is a single executable binary. This binary serve
 
 #### Backend:
 - [gofiber](https://gofiber.io) (API & File Server)
+- [gorm](https://gorm.io) (ORM) (with [gorm.io/driver/sqlite](https://gorm.io/docs/connecting_to_the_database.html#SQLite))
 
 #### Frontend:
 - [Solid.js](https://solidjs.com) (with [@solidjs/router](https://docs.solidjs.com/guides/how-to-guides/routing-in-solid/solid-router))
