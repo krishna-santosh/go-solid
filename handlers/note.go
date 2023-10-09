@@ -114,7 +114,8 @@ func DeleteNote(c *fiber.Ctx) error {
 
 	log.Printf("Deleting Note %d...\n", id)
 	if err = db.Unscoped().Delete(&models.Note{}, id).Error; err != nil {
-		log.Printf("Couldn't delete the note with %d from the database.\n%s\n", id, err)
+		log.Printf("Couldn't delete the note with id %d from the database.\n%s\n", id, err)
+		return c.Status(500).JSON(fiber.Map{"status": "error", "message": "Couldn't delete the note", "data": err.Error()})
 	}
 	log.Printf("Deleted Note %d Successfully.\n", id)
 
